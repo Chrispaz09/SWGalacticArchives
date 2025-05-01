@@ -1,0 +1,48 @@
+﻿@rendermode InteractiveServer
+@using SWGalacticArchives.Components.Interactive
+@using SWGalacticArchives.Models
+@using SWGalacticArchives.Services.Interfaces
+@page "/vehicleshome"
+
+<div class="centerhome">
+<h3>Star Wars Vehicles</h3>
+
+    <Layout>
+        <Main>
+            <h4>
+                Here you'll find the vehicle database!
+            </h4>
+
+            Search a vehicle by using the search box below or view details from a specific vehicle from the Datagrid
+            <br />
+            <br />
+
+            <EntitySearchBox T="Vehicle"
+                        Search="OnSearch"
+                        SearchedItem="@SearchedVehicle"
+                        HeaderText="@SearchedVehicle.name"
+                        FooterText="@SearchedVehicle.vehicle_class"
+                        ItemDoesNotExist="@recordDoesNotExist"
+                        Route="/vehicledetails">
+            </EntitySearchBox>
+
+            @if (recordDoesNotExist)
+            {
+                <p>
+                    Vehicle with the Uid DOES NOT exist. Please try another.
+                </p>
+            }
+
+            <Divider/>
+
+            <EntityDataGrid T="Vehicle" DataGridName="Vehicles"
+                             AllItems="AllVehicles"
+                            DataGridInfo="GridInfo"
+                            NextGridItems="GetItems"
+                            PreviousGridItems="GetItems"
+                            ViewDetails="/vehicledetails">
+
+            </EntityDataGrid>
+        </Main>
+    </Layout>
+</div>

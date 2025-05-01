@@ -1,0 +1,68 @@
+﻿@using SWGalacticArchives.Models
+@rendermode InteractiveServer
+@page "/planetdetails/{Uid}"
+
+<Layout ShowFooter="true">
+    <Header>
+        Name: @Planet.name
+    </Header>
+
+    <Main>
+        <div>
+            <b>Climate: </b> @Planet.climate
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Surface Water:</b> @Planet.surface_water
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Name:</b> @Planet.name
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Diameter:</b> @Planet.diameter
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Rotation Period:</b> @Planet.rotation_period
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Terrain:</b> @Planet.terrain
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Gravity:</b> @Planet.gravity
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Orbital Period:</b> @Planet.orbital_period
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Planet Population</b>: @Planet.population
+        </div>
+
+        <Divider />
+
+    </Main>
+</Layout>
+
+

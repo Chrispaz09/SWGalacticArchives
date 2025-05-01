@@ -1,0 +1,40 @@
+﻿@page "/"
+@using SWGalacticArchives.Components.Interactive
+@using SWGalacticArchives.Components
+
+<PageTitle>Home</PageTitle>
+
+<h1>Hello, Star Wars fans!</h1>
+
+<Divider/>
+Welcome to your home for finding a StarWars Vehicle or Planet. Select one of our search databases below or use the navigation menu to the side!
+
+<br />
+
+<div class="row g-3">
+    <EntityCard HeaderText="Vehicles!"
+                BodyText="HERE you'll be able to find the Star Wars vehicle you've been looking for! With immense amount of details!"
+                FooterText="SWAPI"
+                ButtonText="Go ->"
+                Route="/vehicleshome"
+                Color="Color.Warning"
+                IsCollapsible="false">
+    </EntityCard>
+
+    <EntityCard HeaderText="Planets!"
+                BodyText="HERE you'll be able to find the Star Wars planet in a galaxy far far away! Tons of details to discovery!"
+                FooterText="SWAPI"
+                ButtonText="Go ->"
+                Route="/planetshome"
+                Color="Color.Primary"
+                IsCollapsible="false">
+    </EntityCard>
+
+    <EntityCard HeaderText="Characters!"
+                BodyText="HERE you'll be able to find almost any Star Wars character from the series!! COMING SOON"
+                FooterText="SWAPI"
+                ButtonText="Under construction..."
+                Color="Color.Danger"
+                IsCollapsible="false">
+    </EntityCard>
+</div>

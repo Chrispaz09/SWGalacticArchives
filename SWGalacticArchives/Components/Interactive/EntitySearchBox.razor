@@ -1,0 +1,19 @@
+﻿
+@typeparam T
+
+<input type="search" @bind="Id" @bind:event="onchange" placeholder="Input an Id from the list" />
+<button class="btn btn-primary" @onclick="(() => OnSearch())">Search</button>
+
+<div>
+    @if (!ItemDoesNotExist && Id is not null)
+    {
+        <EntityCard HeaderText="@HeaderText"
+                    FooterText="@FooterText"
+                    Color="Color.Warning"
+                    IsCollapsible="true"
+                    ButtonText="View Details"
+                    Route="@Route"
+                    Uid="@Id">
+        </EntityCard>
+    }
+</div>

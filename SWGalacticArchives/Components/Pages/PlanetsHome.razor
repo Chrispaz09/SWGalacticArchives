@@ -1,0 +1,51 @@
+﻿@rendermode InteractiveServer
+@using SWGalacticArchives.Components.Interactive
+@using SWGalacticArchives.Models
+@page "/planetshome"
+
+<div class="centerhome">
+<h3>Star Wars Planets</h3>
+
+<Layout>
+    <Main>
+        <h4>
+            Here you'll find the planet database!
+        </h4>
+
+        Search a planet by using the search box below or view details from a specific planet from the Datagrid
+        <br />
+        <br />
+
+
+        <Divider />
+
+        <EntitySearchBox T="Planet"
+                         Search="OnSearch"
+                         SearchedItem="@SearchedPlanet"
+                         HeaderText="@SearchedPlanet.name"
+                         FooterText="@SearchedPlanet.terrain"
+                         ItemDoesNotExist="@recordDoesNotExist"
+                         Route="/planetdetails">
+        </EntitySearchBox>
+
+        @if(recordDoesNotExist)
+        {
+            <p>
+                Planet with the Uid DOES NOT exist. Please try another.
+            </p>
+        }
+
+        <Divider />
+
+        <EntityDataGrid T="Planet" DataGridName="Planet"
+                        AllItems="AllPlanets"
+                        DataGridInfo="GridInfo"
+                        NextGridItems="GetItems"
+                        PreviousGridItems="GetItems"
+                        ViewDetails="/planetdetails">
+        </EntityDataGrid>
+
+    </Main>
+</Layout>
+
+</div>

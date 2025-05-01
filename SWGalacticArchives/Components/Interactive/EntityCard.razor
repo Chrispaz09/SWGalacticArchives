@@ -1,0 +1,15 @@
+﻿@rendermode InteractiveServer
+@inject NavigationManager Navigation
+
+<div class="col-12 col-sm-6 col-lg-4 col-xl-2">
+<Card IsShadow="true" HeaderText="@HeaderText" Color="Color" IsCollapsible="@IsCollapsible" IsCenter="true">
+    <BodyTemplate>
+        @BodyText
+        <br />
+            <Button Color="Color.Warning" Text="@ButtonText" Size="Size.ExtraSmall" @onclick="@(() => NavigateTo())" />
+    </BodyTemplate>
+    <FooterTemplate>
+        @FooterText
+    </FooterTemplate>
+</Card>
+</div>

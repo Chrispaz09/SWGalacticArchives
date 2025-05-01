@@ -1,0 +1,66 @@
+﻿@using SWGalacticArchives.Models
+@rendermode InteractiveServer
+@page "/vehicledetails/{Uid}"
+
+<Layout ShowFooter="true">
+    <Header>
+        Name: @Vehicle.name
+    </Header>
+
+    <Main>
+        <div>
+            <b>Consumables: </b> @Vehicle.consumables
+        </div>
+
+        <Divider/>
+
+        <div>
+            <b>Cargo Capacity:</b> @Vehicle.cargo_capacity
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Passengers:</b> @Vehicle.passengers
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Max Atmosphering Speed:</b> @Vehicle.max_atmosphering_speed
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Crew:</b> @Vehicle.crew
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Length:</b> @Vehicle.length
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Model:</b> @Vehicle.model
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Cost in Credits:</b> @Vehicle.cost_in_credits
+        </div>
+
+        <Divider />
+
+        <div>
+            <b>Vehicle Class</b>: @Vehicle.vehicle_class
+        </div>
+
+        <Divider />
+    </Main>
+</Layout>
+
