@@ -32,6 +32,8 @@ namespace SWGalacticArchives.Components.Pages
             if (AllVehicles.Any(p => p.Uid == id))
             {
                 SearchedVehicle = await VehicleService.GetAsync(id);
+
+                recordDoesNotExist = false;
             }
             else
             {

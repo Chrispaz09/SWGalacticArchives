@@ -31,7 +31,10 @@ namespace SWGalacticArchives.Components.Pages
             if (AllPlanets.Any(p => p.Uid == id))
             {
                 SearchedPlanet = await PlanetService.GetAsync(id);
-            }else
+                
+                recordDoesNotExist = false;
+            }
+            else
             {
                 recordDoesNotExist = true;
             }
